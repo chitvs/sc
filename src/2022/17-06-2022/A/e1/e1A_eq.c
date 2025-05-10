@@ -8,7 +8,7 @@ int crc32(char *bytes, int n) {
 L1:
     if (edi >= ebp) goto E;
     int ecx = ebx[edi];
-    eax = eax ^ edi;
+    eax = eax ^ ecx;
     esi = 0;
 L2:
     if (esi >= 8) goto NEXT;
