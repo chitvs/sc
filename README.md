@@ -7,7 +7,7 @@ This compilation serves as a valuable resource for students aiming to strengthen
 
 ## How to compile and run
 
-Navigate to the exercise directory and use `g++` to compile the C file. For example:
+Navigate to the exercise directory and use `gcc` to compile the ASM file. For example:
 
 ```sh
 cd src/"year"/"date"/"exercise X"/
