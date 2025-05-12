@@ -4,6 +4,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-int* count_vars(char** vars, int n);
+int count_matching_vars(char** vars, char* pattern);
 
 #endif
