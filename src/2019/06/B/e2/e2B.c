@@ -1,8 +1,12 @@
 #include "e2B.h"
+
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <sys/wait.h>
+
 
 void check_error(int res, char* msg) {
     if (res != -1) return;
