@@ -1,4 +1,4 @@
-#include "e2A.h"
+#include "e2B.h"
 
 #include <stdio.h>
 #include <fcntl.h>
@@ -13,29 +13,26 @@ void check_error(int res, char* msg) {
     exit(EXIT_FAILURE);
 }
 
-int multicount(const char** s, char c, int n){
-    if (c == '\0' || n == 0){
+int wordcount(const char** s, int n){
+    if (n == 0){
         return -1;
     }
-
     int max = 0;
-
     for (int i = 0; i < n; i++) {
         pid_t pid = fork();
         check_error(pid, "fork");
         if (pid == 0) {
-            int cnt = 0;
-            int len = strlen(s[i]);
             const char* str = s[i];
-            for (int j = 0; j < len; j++) {
-                if (str[j] == c) {
-                    cnt++;
-                }
+            char* str2 = strdup(str);
+            char* token = strtok(str2, " ");
+            int cnt = 0;
+            while (token != NULL){     
+                cnt++;
+                token = strtok(NULL, " ");
             }
             exit(cnt);
         }
     }
-
     int status;
     while (wait(&status) > 0) {
         if (WIFEXITED(status)) {
@@ -45,6 +42,5 @@ int multicount(const char** s, char c, int n){
             }
         }
     }
-
     return max;
 }
