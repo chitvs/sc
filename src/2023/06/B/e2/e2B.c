@@ -5,10 +5,9 @@
 #include <string.h>
 
 int getBalanceMovements(const char* fname, int min, int max, int *bal){
+    
     FILE *f = fopen(fname, "r");
-
     char line[15];
-
     int cnt = 0;
     int bal_value = 0;
 
@@ -29,9 +28,7 @@ int getBalanceMovements(const char* fname, int min, int max, int *bal){
     }
 
     *bal = bal_value;
-
     fclose(f);
 
     return cnt;
-
 }
