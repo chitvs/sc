@@ -23,11 +23,15 @@ void getLargeTables(struct booking **list, const char *filename, int num) {
         fread(places, 1, 2, f) == 2 &&
         fread(time, 1, 5, f) == 5
     ) {
-        for (int i=0;i<30;i++){
+        for (int i = 29; i >= 0; i--){
             if (surname[i] == '_')
                 surname[i] = '\0';
+            else
+                break;
         }
+
         if (atoi(places) >= num) {
+
             struct booking *new_node = malloc(sizeof(struct booking));
             
             if (!new_node) {
@@ -42,7 +46,8 @@ void getLargeTables(struct booking **list, const char *filename, int num) {
             new_node->next = NULL;
 
             if (head == NULL) {
-                head = tail = new_node;
+                head = new_node;
+                tail = new_node;
             } else {
                 tail->next = new_node;
                 tail = new_node;
