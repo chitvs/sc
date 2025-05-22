@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void decodeTextFile(const char *encoded_file, const char *key_file, char **decoded_text) {
+void decodeTextFile(const char *encoded_file, const char *key, char **decoded_text) {
+    
     int c;
     char *keymap = (char *) malloc(sizeof(char) * 58);
     if (keymap == NULL) {
@@ -12,7 +13,7 @@ void decodeTextFile(const char *encoded_file, const char *key_file, char **decod
         return;
     }
 
-    FILE *f = fopen(key_file, "r");
+    FILE *f = fopen(key, "r");
     if (f == NULL) {
         perror("File con la chiave non esistente");
         free(keymap);
