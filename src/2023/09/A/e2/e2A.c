@@ -1,36 +1,80 @@
-#include "e2A.h"
-
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-int getFirstEmptySlot(const char * filename, int len, char ** output){
-    FILE *f = fopen(filename, "r");
-    if (!f) return -1;
+#include "e2A.h"
 
-    char line[50];
-    char surname[31], day[11], time[6], length[4];
+int getFirstEmptySlot (const char * filename, int len, char ** output){
 
-    while (fgets(line, sizeof(line), f)) {
-        if (strlen(line) < 48) break;  
-        line[48] = '\0'; 
+	FILE* fp;
+	* output = (char *) malloc((sizeof(char)*17));
 
-        strncpy(surname, line, 30);
-        surname[30] = '\0';
-        strncpy(day, line + 30, 10);
-        day[10] = '\0';
-        strncpy(time, line + 40, 5);
-        time[5] = '\0';
-        strncpy(length, line + 45, 3);
-        length[3] = '\0';
+	fp = fopen(filename, "r");
+	if (fp==NULL) return -1;
 
-        printf("Surname: '%s'\n", surname);
-        printf("Day: '%s'\n", day);
-        printf("Time: '%s'\n", time);
-        printf("Length: '%s'\n", length);
-    }
+	char data_corrente [11];
+	char ora_corrente [6];
+	char buf[50];
+	char data_tmp [11];
+	char ora_tmp [6];
+	char ora_next [6];
+	char durata_tmp [4];
+	int termina = 0;
 
-    //TODO
+	char * ret = fgets(buf, sizeof(buf), fp);
+	if (ret!=NULL) {
+		strncpy(data_tmp, buf+30, 10);
+		data_tmp[10] = '\0';
+		strncpy(ora_tmp, buf+40, 5);
+		ora_tmp[5] = '\0';
+		strncpy(durata_tmp, buf+45, 3);
+		durata_tmp[3] = '\0';
+	}
 
-    fclose(f);
-    return 0;
+	for (int d=18; d<23; d++) {
+
+        sprintf(data_corrente, "%02d/09/2023", d);
+		strcpy(ora_corrente,"08:00");
+
+		while (strcmp(data_tmp,data_corrente)==0) {
+			strcpy(ora_next,ora_tmp);
+			if (calculateTimeDifference(ora_corrente,ora_next)>=len) {
+				sprintf(*output, "%s %s", data_corrente, ora_corrente);
+				termina=1;
+				break;
+			}
+			strcpy(ora_corrente,addMinutesToTime(ora_next, atoi(durata_tmp)));
+
+			ret = fgets(buf, sizeof(buf), fp);
+			if (ret!= NULL){
+				strncpy(data_tmp, buf+30, 10);
+				data_tmp[10] = '\0';
+				strncpy(ora_tmp, buf+40, 5);
+				ora_tmp[5] = '\0';
+				strncpy(durata_tmp, buf+45, 3);
+				durata_tmp[3] = '\0';
+			} else {
+				strcpy(data_tmp, "23/09/2023");
+				strcpy(ora_next,"18:00");
+			}
+		}
+
+		if(termina==1) break;
+
+		strcpy(ora_next,"18:00");
+		
+		if (calculateTimeDifference(ora_corrente,ora_next)>=len) {
+			sprintf(*output, "%s %s", data_corrente, ora_corrente);
+			termina=1;
+			break;
+		}
+	
+		strcpy(ora_corrente, "08:00");
+	}
+
+	fclose(fp);
+	if (termina==1)
+		return 0;
+	else
+		return -1;
 }
