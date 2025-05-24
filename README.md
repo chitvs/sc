@@ -10,7 +10,7 @@ This compilation serves as a valuable resource for students aiming to strengthen
 Navigate to the exercise directory and use `gcc` to compile the ASM file. For example:
 
 ```sh
-cd src/"year"/"version X"/"date"/"exercise X"/
+cd src/"year"/"month"/"version X"/"date"/"exercise X"/
 gcc -g -m32 -o eX eX.s eX_main.c
 ./eX
 ```
