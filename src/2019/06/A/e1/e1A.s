@@ -2,19 +2,17 @@
 
 init_matrix:
     pushl %esi
-    pushl %edi
     pushl %ebx
     pushl %ebp
     subl $8, %esp
-    movl 28(%esp), %esi
-    movl 32(%esp), %edi
+    movl 24(%esp), %esi
     movl $0, %ebx
 F1:
-    cmpl %edi, %ebx
+    cmpl 28(%esp), %ebx
     jae E
     movl $0, %ebp
 F2:
-    cmpl %edi, %ebp
+    cmpl 28(%esp), %ebp
     jae NEXT
     movl %ebx, (%esp)
     movl %ebp, 4(%esp)
@@ -30,6 +28,5 @@ E:
     addl $8, %esp
     popl %ebp
     popl %ebx
-    popl %edi 
     popl %esi 
     ret

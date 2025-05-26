@@ -1,20 +1,20 @@
 #include "e1A.h"
 
 void init_matrix(short** m, unsigned n) {
-    unsigned i = 0;
-    unsigned j;
+    short** esi = m;
+    unsigned ebx = 0;
 F1:
-    if (i >= n) goto E;
-    j = 0;
+    if (ebx >= n) goto E;
+    unsigned ebp = 0;
 F2:
-    if (j >= n) goto NEXT;
-    short tmp = value(i,j);
-    short* tmp2 = m[i];
-    tmp2[j] = tmp;
-    ++j;
+    if (ebp >= n) goto NEXT;
+    short ax = value(ebx,ebp);
+    short* ecx = esi[ebx];
+    ecx[ebp] = ax;
+    ++ebp;
     goto F2;
 NEXT:
-    ++i;
+    ++ebx;
     goto F1;
 E:
     return;
