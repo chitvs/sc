@@ -2,16 +2,15 @@
 
 int has_duplicates(short* v, unsigned n) {
     short* ecx = v;
-    unsigned eax = n;
-    unsigned edx=0; // i
-    unsigned ebx; // j
+    unsigned edx=0;
+    int eax;
 L1:
-    if (edx>=eax) goto E1;
-    ebx = edx+1;
+    if (edx>=n) goto E1;
+    unsigned ebx = edx+1;
 L2:
-    if (ebx>=eax) goto NEXT;
-    short tmp = ecx[edx];
-    if (tmp == ecx[ebx]) goto E2;
+    if (ebx>=n) goto NEXT;
+    short si = ecx[edx];
+    if (si == ecx[ebx]) goto E2;
     ebx++;
     goto L2;
 NEXT:

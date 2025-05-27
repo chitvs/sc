@@ -4,15 +4,14 @@ has_duplicates:
     pushl %ebx
     pushl %esi
     movl 12(%esp), %ecx
-    movl 16(%esp), %eax
     movl $0, %edx
 L1:
-    cmpl %eax, %edx
+    cmpl 16(%esp), %edx
     jae E1
     movl %edx, %ebx
     incl %ebx
 L2:
-    cmpl %eax, %ebx
+    cmpl 16(%esp), %ebx
     jae NEXT
     movw (%ecx, %edx, 2), %si
     cmpw (%ecx, %ebx, 2), %si
