@@ -35,12 +35,11 @@ int countMinWords(const char** s, int n){
 
     for (int i = 0; i < n; i++) {
         int status;
-	    while(wait(&status) > 0){
-			if(WIFEXITED(status)){
-				if (WEXITSTATUS(status) < minWords)
-                    minWords = WEXITSTATUS(status);
-			}
-	    }
+	    wait(&status);
+        if(WIFEXITED(status)){
+            if (WEXITSTATUS(status) < minWords)
+                minWords = WEXITSTATUS(status);
+        }
     }
 
     return minWords;
