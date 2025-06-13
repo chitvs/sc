@@ -11,6 +11,6 @@ Navigate to the exercise directory and use `g++` to compile the C file. For exam
 
 ```sh
 cd src/"year"/"date"/"exercise X"/
-g++ -g -m32 -o eX eX.s eX_main.c
+gcc -g -m32 -o eX eX.s eX_main.c
 ./eX
 ```
