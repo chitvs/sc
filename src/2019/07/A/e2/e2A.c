@@ -20,7 +20,7 @@ int contains(char* s, char c, int n){
     if (m*n < len) {
         for (int j = n*m; j < len; j++) {
             if (s[j] == c)
-                return 1;
+                ex = 1;
         }
     }
     for (int i = 0; i < n; i++) {
@@ -29,9 +29,9 @@ int contains(char* s, char c, int n){
         if (pid == 0) {
             for (int k = i*m; k < (i+1)*m; k++) {
                 if (s[k] == c)
-                    exit(1);
+                    ex = 1;
             }
-            exit(0);
+            _exit(ex);
         }
     }
     for (int i = 0; i < n; i++) {
