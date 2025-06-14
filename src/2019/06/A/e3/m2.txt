@@ -1,0 +1,18 @@
+- Indirizzi logici a 24 bit => spazio indirizzabile = 2^24 byte.
+- Dimensione della tabella delle pagine = 1 KB = 1024 byte = 2^10 byte.
+- Ogni entry della tabella è di 32 bit = 4 byte = 2^2 byte.
+
+Numero di pagine:
+num_pagine = dimensione_tabella / dimensione_entry
+           = 2^10 / 2^2
+           = 2^8
+           = 256 pagine
+
+Dimensione di ogni pagina:
+dim_pagina = spazio_indirizzabile / num_pagine
+           = 2^24 / 2^8
+           = 2^16 byte
+           = 65536 byte
+           = 64 KB
+
+=> C: 64 KB.
