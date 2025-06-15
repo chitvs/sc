@@ -1,0 +1,5 @@
+user-group-other (ugo)
+rwx rw- r--
+ 7   6   4
+
+=> A: 0764.
