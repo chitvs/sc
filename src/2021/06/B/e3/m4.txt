@@ -1,0 +1,4 @@
+Il segnale SIGALRM, se non opportunamente gestito, porta di default alla 
+terminazione del processo che lo riceve.
+
+=> C.

@@ -1,0 +1,9 @@
+Viene stampato a video "o".
+Solo per il processo originario la condizione in AND nella seconda 
+riga è vera, dato che entrambe le invocazioni di fork() restituiscono
+il PID dei processi figli generati che saranno diversi da 0. Pertanto 
+solo il processo originario arriva ad eseguire la terza invocazione di fork()
+che restituendo un valore (PID) diverso da 0 gli permetterà di eseguire
+l'invocazione a printf.
+
+=> D.
