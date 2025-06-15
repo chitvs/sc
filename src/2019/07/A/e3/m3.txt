@@ -1,0 +1,12 @@
+- Tempo di context switch: 40 usec.
+- Tempo totale speso nei context switch ≤ 2% del tempo totale.
+
+TSmin = 40 + x
+
+40 ≤ 0.02 * TSmin
+
+TSmin = 40 / 0.02
+40 + x = 2000
+x = 1960 usec = 1.96 msec
+
+=> B: 1.96 msec.
