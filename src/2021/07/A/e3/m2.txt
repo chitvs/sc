@@ -1,0 +1,5 @@
+user-group-other (ugo)
+-wx --x r--
+ 3   1   4
+
+=> D: 0314.

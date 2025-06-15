@@ -1,0 +1,11 @@
+- Riduzione del tempo per una porzione A: 30% => rimane il 70% del tempo.
+- Porzione A = 40% del tempo totale.
+
+Speedup:
+S = 1 / (parte non ottimizzata + parte ottimizzata ridotta)
+  = 1 / (0.6 + (0.4 * 0.7))
+  = 1 / (0.6 + 0.28)
+  = 1 / 0.88
+  ≈ 1.14
+
+=> B: ~1.14x.

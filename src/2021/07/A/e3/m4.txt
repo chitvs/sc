@@ -1,0 +1,6 @@
+- "p contiene un indirizzo della stack" è falsa perchè a p viene assegnato il risultato di malloc() che ritorna indirizzi del heap.
+- "non è possibile determinate quanti byte saranno allocati da malloc perchè la variabile i non è stata inizializzata" è false perchè viene solo valutata la dimensione di i (un intero)
+- "p è memorizzato in heap" è false perchè p è una variabile locale e quindi si troverà in stack o in un registro.
+- "*p dipende dal valore dello stack pointer iniziale per l'esecuzione della funzione foo" è vera perchè *p riceve l'indrizzo dell'argomento a che sappiamo essere passato via stack e quindi *p dipenderà dal valore dello stack pointer.
+
+=> D.

@@ -1,0 +1,3 @@
+Eseguendo gcc -c bazinga.c si ottiene un file in linguaggio macchina NON ancora eseguibile. Per renderlo eseguibile occorre svolgere anche la fase di linking con gcc -o bazing bazinga.o.
+
+=> B.
