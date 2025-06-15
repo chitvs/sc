@@ -1,0 +1,18 @@
+- Indirizzi logici a 20 bit => spazio indirizzabile = 2^20 byte.
+- Dimensione della tabella delle pagine = 2 KB = 2048 byte = 2^11 byte.
+- Ogni entry della tabella è di 32 bit = 4 byte = 2^2 byte.
+
+Numero di pagine:
+num_pagine = dimensione_tabella / dimensione_entry
+           = 2^11 / 2^2
+           = 2^9
+           = 512 pagine
+
+Dimensione di ogni pagina:
+dim_pagina = spazio_indirizzabile / num_pagine
+           = 2^20 / 2^9
+           = 2^11 byte
+           = 2048 byte
+           = 2 KB
+
+=> B: 2 KB.
