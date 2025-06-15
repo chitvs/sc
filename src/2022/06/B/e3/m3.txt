@@ -1,0 +1,17 @@
+- Speedup desiderato S = 1.25
+- Porzione ottimizzabile α = 0.4
+- Obiettivo: trovare il fattore di riduzione k
+
+Formula di Amdahl:
+S = 1 / (α/k + (1 - α))
+
+1.25 = 1 / (0.4/k + 0.6)
+0.4/k + 0.6 = 1 / 1.25
+0.4/k + 0.6 = 0.8
+0.4/k = 0.2
+k = 0.4 / 0.2
+k = 2
+
+=> La porzione va resa 2 volte più veloce, cioè ridotta del 50%.
+
+=> C: 50%.
