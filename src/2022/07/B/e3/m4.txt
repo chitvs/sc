@@ -1,0 +1,5 @@
+user-group-other (ugo)
+rw- r-- -wx
+ 6   4   3
+
+=> A: Il proprietario può eseguire il file.
