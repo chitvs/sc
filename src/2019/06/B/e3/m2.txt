@@ -1,0 +1,35 @@
+- Indirizzi virtuali: 16 bit => spazio indirizzabile = 2^16 byte.
+- Dimensione delle pagine = 4 KB = 4096 byte = 2^12.
+- Numero bit per pagina = 16 - 12 = 4 bit.
+- Numero totale di pagine virtuali = 2^4 = 16.
+
+{0xA, 0x3, 0x2, 0xE, 0x7, 0xB, 0x6, 0xD, 0x9, 0xC, 0x1, 0xF, 0x8, 0x5, 0x0, 0x4}
+
+Indirizzo virtuale: 0xA3CD
+- Binario: 1010 0011 1100 1101
+- Pagina virtuale: 0xA (decimale 10 => indice 10)
+- Offset: 0x3CD
+- Frame fisico da tabella: 0x1
+
+Indirizzo fisico = (frame fisico) * (dimensione pagina) + offset
+                 = 0x1 * 0x1000 + 0x3CD = 0x1000 + 0x3CD = 0x13CD
+
+Indirizzo virtuale: 0x2B3F
+- Binario: 0010 1011 0011 1111
+- Pagina virtuale: 0x2 (decimale 2 => indice 2)
+- Offset: 0xB3F
+- Frame fisico da tabella: 0x2
+
+Indirizzo fisico = (frame fisico) * (dimensione pagina) + offset
+                 = 0x2 * 0x1000 + 0xB3F = 0x2000 + 0xB3F = 0x2B3F
+
+Indirizzo virtuale: 0x0CB9
+- Binario: 0000 1100 1011 1001
+- Pagina virtuale: 0x0 (decimale 0 => indice 0)
+- Offset: 0xCB9
+- Frame fisico da tabella: 0xA
+
+Indirizzo fisico = (frame fisico) * (dimensione pagina) + offset
+                 = 0xA * 0x1000 + 0xCB9 = 0xA000 + 0xCB9 = 0xACB9
+
+=> D: 0x13CD, 0x2B3F, 0xACB9.
