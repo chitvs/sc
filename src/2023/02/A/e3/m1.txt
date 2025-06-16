@@ -1,0 +1,25 @@
+- Architettura: IA-32 (Intel, little-endian)
+- Memoria iniziale:
+  0x1000 => 0xA1  
+  0x1001 => 0xB2  
+  0x1002 => 0xC3  
+  0x1003 => 0xD4
+
+- Istruzione: movw $0xF5E6, 0x1002  
+  => Scrive la word 0xF5E6 in memoria a partire da 0x1002  
+  => In little-endian:
+     0x1002 => 0xE6  
+     0x1003 => 0xF5
+
+- Memoria dopo movw:
+  0x1000 => 0xA1  
+  0x1001 => 0xB2  
+  0x1002 => 0xE6  
+  0x1003 => 0xF5
+
+- Istruzione: movl 0x1000, %eax  
+  => Carica 4 byte a partire da 0x1000 in %eax  
+  => In little-endian:
+     %eax => 0xF5E6B2A1
+
+=> B: 0xF5E6B2A1

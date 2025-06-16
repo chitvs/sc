@@ -1,0 +1,5 @@
+user-group-other (ugo)
+--x -w- r-x
+ 1   2   5
+
+=> B: Gli altri utenti (diversi dall’utente proprietario e non membri del gruppo proprietario) possono scrivere il file.

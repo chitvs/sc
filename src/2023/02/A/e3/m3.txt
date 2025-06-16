@@ -1,0 +1,13 @@
+- α = 0.50 (cioè 50%)
+- S = 2.5
+
+Formula di Amdahl:
+S = 1 / (α/k + 1 - α)
+
+2.5 = 1 / (0.5 / k + 0.5)
+0.5 / k + 0.5 = 1 / 2.5 = 0.4
+0.5 / k = 0.4 - 0.5 = -0.1 => impossibile
+
+Questo porta a un valore negativo, il che è impossibile.
+
+=> D: nessuna delle precedenti
