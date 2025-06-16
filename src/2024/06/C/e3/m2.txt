@@ -1,0 +1,7 @@
+FDEMW
+ FDEMW
+    FDEMW
+        FDEMW 
+         FDEMW
+
+=> B: Sono richiesti 14 cicli di clock per completare le istruzioni senza riordinarle.
