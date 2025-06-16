@@ -1,0 +1,20 @@
+- movl $0xA1B2C3D4, %eax  
+  %eax = 0xA1B2C3D4
+
+- movb $0xFE, %dl  
+  %dl = 0xFE
+
+- movsbw %dl, %ax  
+  movsbw = move with sign-extension from byte to word  
+  %dl = 0xFE (in byte: 0b11111110, cioè -2 in signed byte)  
+  Sign-extend 0xFE to 16 bit => 0xFFFE  
+  %ax (i 16 bit meno significativi di %eax) = 0xFFFE  
+  Ora %eax = (alto 16 bit invariati) + 0xFFFE  
+  Valore precedente %eax: 0xA1B2C3D4  
+  %ax è la parte bassa: C3D4 (0xC3D4) viene sostituita da 0xFFFE  
+  Quindi %eax = 0xA1B2FFFE
+
+- movl %eax, %ecx  
+  %ecx = %eax = 0xA1B2FFFE
+
+=> B: 0xA1B2FFFE.

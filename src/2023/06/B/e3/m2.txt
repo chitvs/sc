@@ -1,0 +1,3 @@
+L’istruzione che calcola x * x può essere eseguita una sola volta prima di entrare nel ciclo.
+
+=> C: Loop-Invariant Code Motion.

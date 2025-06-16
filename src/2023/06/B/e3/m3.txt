@@ -1,0 +1,5 @@
+user-group-other (ugo)
+rwx r-- r-x
+ 7   4   5
+
+=> D: Gli altri utenti (diversi dall’utente proprietario e non membri del gruppo proprietario) non possono leggere il file.
