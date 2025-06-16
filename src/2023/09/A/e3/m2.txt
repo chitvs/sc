@@ -1,0 +1,17 @@
+FDEMW
+ FDEMW
+  FDEMW
+     FDEMW
+      FDEMW
+
+11 cicli senza riordinamento.
+  
+FDEMW 
+ FDEMW 
+  FDEMW 
+   FDEMW
+    FDEMW
+
+9 cicli con riordinamento.
+
+=> B: Si, è possibile ridurre il numero di cicli di clock a 9, ma non a meno.

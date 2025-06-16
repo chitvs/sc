@@ -1,0 +1,20 @@
+- α = 0.75 (porzione del tempo da ridurre)
+- S = 1.42 (speedup desiderato)
+
+Formula di Amdahl:
+S = 1 / (α/k + 1 - α)
+
+1.42 = 1 / (0.75/k + 1 - 0.75)
+1.42 = 1 / (0.75/k + 0.25)
+
+Inverto entrambi i lati:
+1 / 1.42 = 0.75/k + 0.25
+0.7042 = 0.75/k + 0.25
+0.7042 - 0.25 = 0.75/k
+0.4542 = 0.75/k
+k = 0.75 / 0.4542 ≈ 1.65
+
+Quindi la porzione va accelerata di un fattore 1.65 → tempo ridotto a circa:
+1 / 1.65 ≈ 0.606 => riduzione ≈ 39.4%
+
+=> C: 40%.
