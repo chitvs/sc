@@ -1,0 +1,5 @@
+user-group-other (ugo)
+rw- r-x -w-
+ 6   5   2
+
+=> B: 0652.
