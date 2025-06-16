@@ -1,0 +1,5 @@
+user-group-other (ugo)
+rw- --- rw-
+ 6   0   6
+
+=> C: Nessuna delle risposte è corretta.
