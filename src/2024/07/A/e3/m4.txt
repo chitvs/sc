@@ -1,0 +1,17 @@
+- Spazio logico = 2^34 byte
+- Dimensione tabella pagine = 8 MB = 8 * 2^20 = 2^3 * 2^20 = 2^23 byte
+- Ogni entry tabella = 32 bit = 4 byte = 2^2 byte
+
+Numero di pagine:
+num_pagine = dimensione_tabella / dimensione_entry
+           = 2^23 / 2^2
+           = 2^21 pagine
+
+Dimensione di ogni pagina:
+dim_pagina = spazio_logico / num_pagine
+           = 2^34 / 2^21
+           = 2^13 byte
+           = 8192 byte
+           = 8 KB
+
+=> C: 8 KB.
