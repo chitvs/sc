@@ -1,0 +1,5 @@
+user-group-other (ugo)
+rwx -wx r-x
+ 7   3   5
+
+=> C: Il gruppo proprietario può leggere il file.
