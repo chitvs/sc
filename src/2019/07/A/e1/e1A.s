@@ -1,35 +1,40 @@
 .globl most_freq_char
-
 most_freq_char:
     pushl %esi
     pushl %edi
+    pushl %ebx
+    pushl %ebp
     subl $8, %esp
-    movl 20(%esp), %esi
-    movl 24(%esp), %edi
-    movl %edi, (%esp)
+    xorl %esi, %esi         
+    xorl %edi, %edi         
+    movl 32(%esp), %ebx
+    movl %ebx, (%esp)
     movl $256, 4(%esp)
     call clear
-    xorl %eax, %eax
-L1:
-    movb (%esi), %dl
-    movsbl %dl, %edx
-    testl %edx, %edx
-    je E1
-    incl (%edi,%edx,4)
-    incl %esi
-    jmp L1
-E1:
-    xorl %ecx, %ecx
+    movl 28(%esp), %edx
+L:
+    cmpb $0, (%edx)
+    je L2
+    movb (%edx), %cl     
+    movzbl %cl, %ecx   
+    incl %edx               
+    incl (%ebx, %ecx, 4)    
+    jmp L
 L2:
-    cmpl $256, %ecx
-    jge E2
-    movl (%edi,%ecx,4), %edx
-    cmpl (%edi,%eax,4), %edx
-    cmovgl %ecx, %eax
-    incl %ecx
+    cmpl $256, %esi
+    jge RET
+    movl (%ebx, %edi, 4), %ebp
+    cmpl %ebp, (%ebx, %esi, 4)
+    jle NEXT
+    movl %esi, %edi
+NEXT:
+    incl %esi
     jmp L2
-E2:
+RET:
+    movl %edi, %eax
     addl $8, %esp
+    popl %ebp
+    popl %ebx
     popl %edi
     popl %esi
     ret
