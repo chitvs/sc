@@ -12,7 +12,7 @@ Navigate to the exercise directory and use `gcc` to compile the ASM/C file. For 
 ### E1 - Assembly
 
 ```sh
-cd src/"year"/"month"/"session"/e1/
+cd src/<year>/<month>/<session>/e1/
 gcc -g -m32 -o e1 e1.s e1_main.c
 ./e1
 ```
@@ -20,7 +20,7 @@ gcc -g -m32 -o e1 e1.s e1_main.c
 ### E2 - C
 
 ```sh
-cd src/"year"/"month"/"session"/e2/
+cd src/<year>/<month>/<session>/e2/
 gcc -g -o e2 e2.s e2_main.c
-./eX
+./e2
 ```
