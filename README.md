@@ -24,4 +24,5 @@ cd src/<year>/<month>/<session>/e2/
 gcc -g -o e2 e2.s e2_main.c
 ./e2
 ```
+> [!NOTE]  
 > If your folder structure does not include multiple sessions, you can skip the `<session>` placeholder.
