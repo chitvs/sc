@@ -7,6 +7,12 @@ This compilation serves as a valuable resource for students aiming to strengthen
 
 ## How to compile and run
 
+Clone the repository:
+```sh
+git clone https://github.com/chitvs/sc.git
+cd sc
+```
+
 Navigate to the exercise directory and use `gcc` to compile the ASM/C file. For example:
 
 ### E1 - Assembly
