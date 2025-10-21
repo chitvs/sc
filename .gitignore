@@ -1,0 +1,62 @@
+# Compiled object files
+*.o
+*.obj
+
+# Compiled static libraries
+*.a
+*.lib
+
+# Compiled dynamic libraries
+*.so
+*.so.*
+*.dll
+*.dylib
+
+# Executable files
+*.out
+*.exe
+*.elf
+*.bin
+
+# Assembly intermediate and listing files
+*.lst
+*.lss
+*.map
+
+# Debug files
+*.dSYM/
+*.pdb
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Dependency files (from -MMD / -MP flags)
+*.d
+
+# Build system files
+Makefile~
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+build/
+bin/
+obj/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.old
+
+# IDE/Editor specific
+.vscode/
+.idea/
+*.code-workspace
+
+# macOS / Windows cruft
+.DS_Store
+Thumbs.db
